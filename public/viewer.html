@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>AR Images | Viewer</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+    <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
+    <script defer src="/js/viewer.js"></script>
+  </head>
+  <body class="viewer-page">
+    <div class="viewer-shell">
+      <div class="viewer-topbar">
+        <a class="button ghost" href="/">Back to Dashboard</a>
+        <div class="viewer-hints">
+          <p>Allow camera access, then point your device at one of the uploaded images.</p>
+        </div>
+      </div>
+
+      <div id="viewerStatus" class="status-banner info">
+        Preparing AR viewer...
+      </div>
+
+      <div id="emptyState" class="viewer-empty" hidden>
+        <h1>No AR targets ready yet.</h1>
+        <p>Create at least one image-video pair and rebuild the target file from the dashboard first.</p>
+      </div>
+
+      <div id="arRoot" class="ar-root"></div>
+    </div>
+  </body>
+</html>

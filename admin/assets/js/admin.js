@@ -1,0 +1,5 @@
+document.querySelectorAll("[data-confirm]").forEach((link)=>{link.addEventListener("click",(event)=>{if(!confirm("Are you sure? This action cannot be undone.")){event.preventDefault();}});});
+const addOrderItem=document.querySelector("[data-add-order-item]");
+if(addOrderItem){addOrderItem.addEventListener("click",()=>{const wrap=document.querySelector("[data-order-items]");const index=wrap.children.length;const row=document.createElement("div");row.className="order-item-row";row.innerHTML=`<input name="items[${index}][product_name]" placeholder="Product name"><input type="number" name="items[${index}][quantity]" value="1"><input type="number" step="0.01" name="items[${index}][price]" placeholder="Price">`;wrap.appendChild(row);});}
+const previewInput=document.querySelector("[data-preview-input]");
+if(previewInput){previewInput.addEventListener("change",()=>{const target=document.querySelector("[data-upload-preview]");target.innerHTML="";Array.from(previewInput.files).forEach((file)=>{const img=document.createElement("img");img.src=URL.createObjectURL(file);img.alt=file.name;target.appendChild(img);});});}

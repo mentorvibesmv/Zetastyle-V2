@@ -1,0 +1,377 @@
+:root {
+  --bg: #f5efe2;
+  --bg-accent: #efe4c7;
+  --surface: rgba(255, 252, 246, 0.92);
+  --surface-strong: #fffdf7;
+  --ink: #1f2220;
+  --muted: #5d635d;
+  --line: rgba(31, 34, 32, 0.12);
+  --brand: #005f73;
+  --brand-strong: #0a9396;
+  --danger: #b42318;
+  --success: #0a7d4f;
+  --warning: #9f6000;
+  --shadow: 0 24px 60px rgba(53, 55, 45, 0.14);
+  --radius-xl: 28px;
+  --radius-lg: 20px;
+  --radius-md: 14px;
+  --max-width: 1180px;
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at top left, rgba(10, 147, 150, 0.14), transparent 36%),
+    radial-gradient(circle at top right, rgba(238, 155, 0, 0.14), transparent 28%),
+    linear-gradient(180deg, var(--bg) 0%, #f8f7f2 100%);
+}
+
+body {
+  line-height: 1.5;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+.shell,
+.viewer-shell {
+  width: min(var(--max-width), calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 1.25rem 0 2rem;
+}
+
+.hero,
+.card,
+.viewer-topbar {
+  backdrop-filter: blur(14px);
+}
+
+.hero {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: end;
+  padding: 1.5rem;
+  margin: 1rem 0 1.5rem;
+  background: linear-gradient(135deg, rgba(255, 253, 247, 0.96), rgba(255, 249, 232, 0.82));
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow);
+}
+
+.eyebrow,
+.section-label,
+.preview-label {
+  margin: 0 0 0.35rem;
+  color: var(--brand);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.74rem;
+  font-weight: 700;
+}
+
+.hero h1,
+.card h2,
+.viewer-empty h1 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1.1;
+}
+
+.hero h1 {
+  max-width: 12ch;
+  font-size: clamp(2rem, 4vw, 4rem);
+}
+
+.hero-copy,
+.viewer-hints p,
+.empty-preview,
+.field small,
+.viewer-empty p {
+  color: var(--muted);
+}
+
+.layout {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.card {
+  padding: 1.4rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.form-grid,
+.field {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.form-grid {
+  gap: 1rem;
+}
+
+.field span {
+  font-weight: 700;
+}
+
+.field input {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 0.85rem 0.95rem;
+  background: var(--surface-strong);
+}
+
+.preview-row {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.preview-panel,
+.mapping-item {
+  border-radius: var(--radius-md);
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.preview-panel {
+  min-height: 240px;
+  padding: 0.95rem;
+}
+
+.preview-panel img,
+.preview-panel video,
+.mapping-media img,
+.mapping-media video {
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+  background: #d7e0dd;
+}
+
+.preview-panel img,
+.mapping-media img {
+  aspect-ratio: 4 / 3;
+}
+
+.preview-panel video,
+.mapping-media video {
+  aspect-ratio: 16 / 9;
+}
+
+.empty-preview {
+  margin: 1rem 0 0;
+}
+
+.form-actions,
+.hero-actions,
+.mapping-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.button {
+  border: none;
+  cursor: pointer;
+  padding: 0.85rem 1.15rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--brand), var(--brand-strong));
+  color: white;
+  font-weight: 700;
+  transition: transform 150ms ease, box-shadow 150ms ease, opacity 150ms ease;
+  box-shadow: 0 12px 28px rgba(0, 95, 115, 0.18);
+}
+
+.button:hover {
+  transform: translateY(-1px);
+}
+
+.button:disabled {
+  cursor: wait;
+  opacity: 0.7;
+}
+
+.button.ghost,
+.button.secondary {
+  color: var(--ink);
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: none;
+  border: 1px solid var(--line);
+}
+
+.status-banner {
+  margin-bottom: 1rem;
+  padding: 0.95rem 1rem;
+  border-radius: 16px;
+  border: 1px solid transparent;
+}
+
+.status-banner.info {
+  background: rgba(0, 95, 115, 0.08);
+  color: #084c59;
+  border-color: rgba(0, 95, 115, 0.16);
+}
+
+.status-banner.success {
+  background: rgba(10, 125, 79, 0.1);
+  color: var(--success);
+  border-color: rgba(10, 125, 79, 0.18);
+}
+
+.status-banner.warning {
+  background: rgba(159, 96, 0, 0.12);
+  color: var(--warning);
+  border-color: rgba(159, 96, 0, 0.2);
+}
+
+.status-banner.error {
+  background: rgba(180, 35, 24, 0.1);
+  color: var(--danger);
+  border-color: rgba(180, 35, 24, 0.18);
+}
+
+.mapping-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.mapping-item {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 320px);
+  padding: 1rem;
+}
+
+.mapping-meta h3 {
+  margin: 0 0 0.45rem;
+}
+
+.mapping-meta p {
+  margin: 0.25rem 0;
+  color: var(--muted);
+}
+
+.mapping-media {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.mapping-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.3rem 0.65rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  background: rgba(0, 95, 115, 0.1);
+  color: var(--brand);
+}
+
+.steps {
+  display: grid;
+  gap: 0.75rem;
+  padding-left: 1.2rem;
+  margin: 0;
+}
+
+.viewer-page {
+  background: #101715;
+  color: white;
+}
+
+.viewer-shell {
+  width: min(100%, 1100px);
+  padding-bottom: max(1.5rem, env(safe-area-inset-bottom));
+}
+
+.viewer-topbar {
+  position: relative;
+  z-index: 6;
+  margin: 1rem;
+  padding: 0.9rem 1rem;
+  border-radius: 18px;
+  background: rgba(16, 23, 21, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+}
+
+.viewer-hints p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.viewer-page .status-banner {
+  position: relative;
+  z-index: 6;
+  margin: 0 1rem 1rem;
+}
+
+.viewer-empty {
+  position: relative;
+  z-index: 6;
+  width: min(560px, calc(100% - 2rem));
+  margin: 3rem auto;
+  padding: 1.6rem;
+  border-radius: 24px;
+  background: rgba(16, 23, 21, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  text-align: center;
+}
+
+.ar-root {
+  position: relative;
+  min-height: calc(100vh - 160px);
+}
+
+.ar-root a-scene {
+  position: fixed !important;
+  inset: 0;
+}
+
+@media (max-width: 860px) {
+  .hero,
+  .mapping-item,
+  .preview-row,
+  .viewer-topbar {
+    grid-template-columns: 1fr;
+  }
+
+  .section-heading,
+  .viewer-topbar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

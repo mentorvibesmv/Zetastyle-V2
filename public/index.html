@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AR Images | Dashboard</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+    <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image.prod.js"></script>
+    <script defer src="/js/dashboard.js"></script>
+  </head>
+  <body>
+    <div class="shell">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">AR Images</p>
+          <h1>Link printed images to AR video overlays.</h1>
+          <p class="hero-copy">
+            Upload image and video pairs, compile a multi-target MindAR file in the browser, and launch a mobile-friendly AR viewer.
+          </p>
+        </div>
+        <div class="hero-actions">
+          <a class="button ghost" href="/viewer.html">Open AR Viewer</a>
+        </div>
+      </header>
+
+      <main class="layout">
+        <section class="card">
+          <div class="section-heading">
+            <div>
+              <p class="section-label">Upload Dashboard</p>
+              <h2 id="formTitle">Create a New Mapping</h2>
+            </div>
+          </div>
+
+          <form id="mappingForm" class="form-grid">
+            <input type="hidden" id="mappingId" name="mappingId" />
+
+            <label class="field">
+              <span>Target name</span>
+              <input id="name" name="name" type="text" maxlength="80" placeholder="Magazine cover, poster, packaging, flyer..." />
+            </label>
+
+            <label class="field">
+              <span>Target image</span>
+              <input id="image" name="image" type="file" accept="image/png,image/jpeg" />
+              <small>Use detailed, high-contrast JPG or PNG images for better tracking.</small>
+            </label>
+
+            <label class="field">
+              <span>Overlay video</span>
+              <input id="video" name="video" type="file" accept="video/mp4" />
+              <small>MP4 video recommended for Android Chrome and iOS Safari.</small>
+            </label>
+
+            <div class="preview-row">
+              <div class="preview-panel">
+                <p class="preview-label">Image preview</p>
+                <img id="imagePreview" alt="Selected image preview" hidden />
+                <p id="imageEmpty" class="empty-preview">No image selected yet.</p>
+              </div>
+
+              <div class="preview-panel">
+                <p class="preview-label">Video preview</p>
+                <video id="videoPreview" controls muted playsinline hidden></video>
+                <p id="videoEmpty" class="empty-preview">No video selected yet.</p>
+              </div>
+            </div>
+
+            <div class="form-actions">
+              <button class="button" type="submit" id="submitButton">Save Mapping</button>
+              <button class="button ghost" type="button" id="cancelEditButton" hidden>Cancel Edit</button>
+            </div>
+          </form>
+        </section>
+
+        <section class="card">
+          <div class="section-heading">
+            <div>
+              <p class="section-label">Target Library</p>
+              <h2>Saved Image-Video Pairs</h2>
+            </div>
+            <button class="button secondary" id="rebuildTargetsButton" type="button">Rebuild Target File</button>
+          </div>
+
+          <div id="statusBanner" class="status-banner info">
+            Upload at least one mapping, then compile the `.mind` target file before scanning.
+          </div>
+
+          <div id="mappingsList" class="mapping-list"></div>
+        </section>
+
+        <section class="card">
+          <div class="section-heading">
+            <div>
+              <p class="section-label">How It Works</p>
+              <h2>WebAR Flow</h2>
+            </div>
+          </div>
+
+          <ol class="steps">
+            <li>Upload one or more target images and matching MP4 videos.</li>
+            <li>The dashboard compiles all target images into a single MindAR `.mind` file.</li>
+            <li>Open the AR viewer on a phone, allow camera access, and point at one of the uploaded images.</li>
+            <li>The mapped video appears anchored over the detected image and plays in a loop.</li>
+          </ol>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

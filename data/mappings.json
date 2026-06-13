@@ -1,0 +1,17 @@
+{
+  "mappings": [
+    {
+      "id": "9bd3f6a4-839e-4c75-84ce-4ea6e85476da",
+      "name": "test",
+      "imageUrl": "/uploads/images/1776065685340-LEGO_45300_alt10.jpg",
+      "imageFilename": "1776065685340-LEGO_45300_alt10.jpg",
+      "videoUrl": "/uploads/videos/1776065685340-step1.mp4",
+      "videoFilename": "1776065685340-step1.mp4",
+      "targetFileRef": null,
+      "targetIndex": 0,
+      "createdAt": "2026-04-13T07:34:45.348Z",
+      "updatedAt": "2026-04-13T07:34:45.348Z"
+    }
+  ],
+  "targetBundle": null
+}
