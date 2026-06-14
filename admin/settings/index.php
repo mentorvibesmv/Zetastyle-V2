@@ -155,7 +155,6 @@ require_once __DIR__ . '/../header.php';
         <button type="button" class="tab-btn" data-tab="social">Social Media</button>
         <button type="button" class="tab-btn" data-tab="shipping">Shipping</button>
         <button type="button" class="tab-btn" data-tab="seo">SEO</button>
-        <button type="button" class="tab-btn" data-tab="footer">Footer</button>
         <button type="button" class="tab-btn" data-tab="announcements">Announcements</button>
         <button type="button" class="tab-btn" data-tab="homepage">Homepage Layout</button>
     </div>
@@ -211,15 +210,7 @@ require_once __DIR__ . '/../header.php';
                     <img src="<?= e(public_image($settings['default_og_image'])); ?>" alt="OG Preview" style="max-height: 100px; margin-top: 10px; display: block;">
                 <?php endif; ?>
             </label>
-        </div>
-        
-        <!-- FOOTER TAB -->
-        <div id="tab-footer" class="tab-content">
-            <label class="wide">Footer Description<textarea name="footer_description" rows="2"><?= e($settings['footer_description']); ?></textarea></label>
-            <label class="wide">Copyright Text<input name="copyright_text" value="<?= e($settings['copyright_text']); ?>"></label>
-            <label class="wide">Newsletter Text<input name="newsletter_text" value="<?= e($settings['newsletter_text']); ?>"></label>
-        </div>
-        
+        </div>        
         <!-- ANNOUNCEMENTS TAB -->
         <div id="tab-announcements" class="tab-content">
             <div class="wide" style="display: flex; gap: 20px; align-items: center;">
