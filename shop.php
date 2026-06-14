@@ -25,14 +25,6 @@ if ($pdo instanceof PDO) {
 
 require_once __DIR__ . '/includes/header.php';
 ?>
-<section class="page-hero compact">
-    <div class="container">
-        <p class="eyebrow">Catalog</p>
-        <h1>Shop ZetaStyle</h1>
-        <p>Custom printed essentials with premium fabric, refined silhouettes, and made-to-order print quality.</p>
-    </div>
-</section>
-
 <section class="section">
     <div class="container shop-layout">
         <aside class="filter-panel-sticky">
