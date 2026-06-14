@@ -3,13 +3,6 @@ require_once __DIR__ . '/includes/functions.php';
 $meta = page_meta('Cart', 'Review your ZetaStyle shopping cart and update custom clothing quantities.');
 require_once __DIR__ . '/includes/header.php';
 ?>
-<section class="page-hero compact">
-    <div class="container">
-        <p class="eyebrow">Shopping bag</p>
-        <h1>Your Cart</h1>
-        <p>Review quantities before sending your custom clothing order to checkout.</p>
-    </div>
-</section>
 <section class="section">
     <div class="container cart-layout">
         <div class="cart-items" data-cart-items></div>
