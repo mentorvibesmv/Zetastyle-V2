@@ -3,13 +3,6 @@ require_once __DIR__ . '/includes/functions.php';
 $meta = page_meta('Journal', 'Read ZetaStyle notes on custom print placement, garment care, and premium apparel choices.');
 require_once __DIR__ . '/includes/header.php';
 ?>
-<section class="page-hero compact">
-    <div class="container">
-        <p class="eyebrow">Journal</p>
-        <h1>Print, fabric, and style notes.</h1>
-        <p>Clear guidance for creating custom apparel that feels considered from the first wear.</p>
-    </div>
-</section>
 <section class="section">
     <div class="container blog-grid">
         <?php foreach (blogs() as $post): ?>
