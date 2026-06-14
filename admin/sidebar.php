@@ -12,5 +12,5 @@
         <a class="<?= active_admin_link('analytics'); ?>" href="<?= admin_url('analytics.php'); ?>">Analytics</a>
         <a class="<?= active_admin_link('settings'); ?>" href="<?= admin_url('settings/'); ?>">Settings</a>
     </nav>
-    <a class="view-site" href="../index.php" target="_blank" rel="noopener">View Website</a>
+    <a class="view-site" href="/Zetastyle-V2-main/index.php" target="_blank" rel="noopener">View Website</a>
 </aside>
