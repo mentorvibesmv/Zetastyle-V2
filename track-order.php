@@ -22,26 +22,6 @@ if ($trackingQuery !== '') {
         $trackError = 'Tracking is temporarily unavailable. Please try again later.';
     }
 }
-
-$statuses = ['Confirmed', 'Packing', 'Dispatched', 'Delivered'];
-$statusLabels = [
-    'Confirmed' => 'Order Confirmed',
-    'Packing' => 'Packing & Printing',
-    'Dispatched' => 'Dispatched',
-    'Delivered' => 'Delivered',
-];
-$statusDescriptions = [
-    'Confirmed' => 'Artwork and garment details received.',
-    'Packing' => 'Your custom print is in production and packing.',
-    'Dispatched' => 'Courier pickup and tracking assignment.',
-    'Delivered' => 'Your order has arrived.',
-];
-$currentStatus = $trackedOrder['status'] ?? 'Packing';
-$currentIndex = array_search($currentStatus, $statuses, true);
-if ($currentStatus === 'Cancelled') {
-    $currentIndex = -2;
-}
-
 require_once __DIR__ . '/includes/header.php';
 ?>
 <section class="page-hero compact">
@@ -80,19 +60,6 @@ require_once __DIR__ . '/includes/header.php';
                 <p><strong>Estimated Delivery:</strong> <?= e($trackedOrder['expected_delivery'] ?: 'To be confirmed'); ?></p>
             </article>
         <?php endif; ?>
-
-        <ol class="timeline reveal">
-            <?php foreach ($statuses as $index => $status): ?>
-                <li class="<?= $currentIndex >= $index ? 'done' : ''; ?>">
-                    <span></span>
-                    <strong><?= e($statusLabels[$status]); ?></strong>
-                    <small><?= e($statusDescriptions[$status]); ?></small>
-                </li>
-            <?php endforeach; ?>
-            <?php if ($currentStatus === 'Cancelled'): ?>
-                <li class="done"><span></span><strong>Cancelled</strong><small>This order has been cancelled by the studio.</small></li>
-            <?php endif; ?>
-        </ol>
     </div>
 </section>
 <?php require_once __DIR__ . '/includes/footer.php'; ?>
