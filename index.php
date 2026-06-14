@@ -25,21 +25,6 @@ uasort($sections, function($a, $b) {
 });
 ?>
 
-<section class="hero">
-    <div class="hero-bg">
-        <img src="https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?auto=format&fit=crop&w=1800&q=90" alt="Premium clothing rail with tailored garments">
-    </div>
-    <div class="container hero-content reveal">
-        <p class="eyebrow"><?= e(getSetting('brand_tagline', 'Custom printed clothing studio')); ?></p>
-        <h1><?= e(getSetting('website_name', 'ZetaStyle')); ?></h1>
-        <p>Minimal luxury apparel made personal, from single keepsakes to polished team collections.</p>
-        <div class="hero-actions">
-            <a class="btn btn-dark" href="shop.php">Shop Collection</a>
-            <a class="btn btn-light" href="contact.php">Start Custom Order</a>
-        </div>
-    </div>
-</section>
-
 <?php
 // Render sections in dynamic order
 foreach ($sections as $sectionKey => $sectionInfo) {
