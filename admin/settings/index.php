@@ -151,7 +151,6 @@ require_once __DIR__ . '/../header.php';
     <!-- Tab Controls -->
     <div class="admin-tabs" style="display: flex; flex-wrap: wrap; gap: 5px; border-bottom: 1px solid var(--border); margin-bottom: 24px;">
         <button type="button" class="tab-btn active" data-tab="general">General</button>
-        <button type="button" class="tab-btn" data-tab="branding">Branding</button>
         <button type="button" class="tab-btn" data-tab="contact">Contact</button>
         <button type="button" class="tab-btn" data-tab="social">Social Media</button>
         <button type="button" class="tab-btn" data-tab="shipping">Shipping</button>
@@ -172,27 +171,9 @@ require_once __DIR__ . '/../header.php';
             <label class="wide">Website Name<input name="website_name" value="<?= e($settings['website_name']); ?>" required></label>
             <label class="wide">Brand Tagline<input name="brand_tagline" value="<?= e($settings['brand_tagline']); ?>"></label>
         </div>
-        
-        <!-- BRANDING TAB -->
-        <div id="tab-branding" class="tab-content">
-            <label>Logo File
-                <input type="file" name="logo" accept="image/*">
-                <?php if ($settings['logo']): ?>
-                    <img src="<?= e(public_image($settings['logo'])); ?>" alt="Logo Preview" style="max-height: 50px; margin-top: 10px; display: block;">
-                <?php endif; ?>
-            </label>
-            <label>Favicon File
-                <input type="file" name="favicon" accept="image/*">
-                <?php if ($settings['favicon']): ?>
-                    <img src="<?= e(public_image($settings['favicon'])); ?>" alt="Favicon Preview" style="max-height: 32px; margin-top: 10px; display: block;">
-                <?php endif; ?>
-            </label>
-        </div>
-        
         <!-- CONTACT TAB -->
         <div id="tab-contact" class="tab-content">
             <label>Primary Phone<input name="contact_phone" value="<?= e($settings['contact_phone']); ?>"></label>
-            <label>Secondary Phone<input name="secondary_phone" value="<?= e($settings['secondary_phone']); ?>"></label>
             <label>WhatsApp Number<input name="whatsapp_number" value="<?= e($settings['whatsapp_number']); ?>"></label>
             <label>Contact Email<input name="contact_email" value="<?= e($settings['contact_email']); ?>"></label>
             <label>Support Email<input name="support_email" value="<?= e($settings['support_email']); ?>"></label>
